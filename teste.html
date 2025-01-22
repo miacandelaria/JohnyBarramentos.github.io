@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Johny Drywall Barramentos</title>
+    <!-- Link para fontes de ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #121212; /* Fundo escuro moderno */
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Cabeçalho com efeito fixo */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background: rgba(0, 0, 0, 0.8); /* Transparência */
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: #76FF03;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+        }
+
+        nav a::after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #76FF03;
+            left: 0;
+            bottom: -5px;
+            transition: width 0.3s ease-in-out;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Ícones sociais */
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 20px;
+            transition: transform 0.3s, color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #76FF03;
+            transform: scale(1.2);
+        }
+
+        /* Main */
+        main {
+            flex: 1;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .container2 {
+            margin: 0 auto;
+            max-width: 900px;
+            background: linear-gradient(145deg, #263238, #37474F);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            color: #A5D6A7;
+        }
+
+        .main-title {
+            font-size: 60px;
+            font-weight: bold;
+            margin-bottom: 50px;
+            color: #76FF03;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+        }
+
+        h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #E8F5E9;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: #C8E6C9;
+        }
+
+        /* Galeria de Imagens */
+        .cointained2 {
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+            gap: 6px;
+            flex-wrap: nowrap; /* Imagens alinhadas lado a lado */
+             /* Barra de rolagem horizontal caso necessário */
+            position: relative;
+            padding-bottom: 5px; /* Evita o corte visual no hover */
+        }
+
+        .cointained2 img {
+            width: 200px; /* Largura fixa para que todas caibam lado a lado */
+            height: auto;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 2px solid #76FF03;
+            transition: transform 0.4s, box-shadow 0.4s;
+        }
+
+        .cointained2 img:hover {
+            transform: scale(1.1); /* Aumenta a imagem */
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.6);
+            z-index: 10; /* Garante que a imagem em hover fica em cima das outras */
+        }
+
+        /* Rodapé */
+        footer {
+            background: black;
+            color: #E8F5E9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 30px 10px;
+            font-size: 10px;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            width: 100%;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-logo {
+            font-size: 18px;
+            font-weight: bold;
+            color: #76FF03;
+        }
+
+        .footer-nav {
+            display: flex;
+            gap: 40px;
+            text-align: center;
+            margin: 20px;
+        }
+
+        .footer-nav a {
+            color: #C8E6C9;
+            text-decoration: none;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        .footer-nav a:hover {
+            color: #76FF03;
+        }
+
+        .footer-contact {
+            display: flex;
+            flex-direction: column;
+           /* align-items: flex-start;*/
+            color: #C8E6C9;
+            text-align: left;
+        }
+
+        .footer-contact p {
+            margin: 5px 0;
+            text-align: left;
+            font-size: 15px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 25px;
+        }
+
+        .footer-social a {
+            color: #C8E6C9;
+            font-size: 20px;
+            transition: transform 0.3s, color 0.3s;
+        }
+
+        .footer-social a:hover {
+            color: #76FF03;
+            transform: scale(1.2);
+        }
+
+        /* Botão Voltar ao Topo */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #76FF03;
+            color: #121212;
+            font-size: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .back-to-top:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="teste.html">Home</a>
+            <a href="servicos.html">Serviços</a>
+            <a href="galeria.html">Galeria</a>
+        </nav>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/johnydrywallbarramentos"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@johnybarramentos?_t=8s84f4rD3tH&_r=1"><i class="fab fa-tiktok"></i></a>
+        </div>
+    </header>
+    <main>
+        <h1 class="main-title">JOHNY DRYWALL BARRAMENTOS</h1>
+        <div class="container2">
+            <h2>Trabalhos Realizados</h2>
+            <p>Pladur, Barramento, Pintura e Micro Cimento com qualidade e excelência.</p>
+        </div>
+
+        <div class="cointained2">
+            <img src="1 png.png" alt="Trabalho 1">
+            <img src="2 png.png" alt="Trabalho 2">
+            <img src="3 png.png" alt="Trabalho 3">
+            <img src="4 png.png" alt="Trabalho 4">
+            <img src="5 png.png" alt="Trabalho 5">
+        </div>
+    </main>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                
+                <img src="logo_johny3.jpg" alt="Johny Drywall Barramentos" style="width: 200px; display: block; margin: 0 auto 0 0;">
+            </div>
+            <div class="footer-nav">
+                <a href="#">Home</a>
+                <a href="#">Serviços</a>
+                <a href="#">Sobre Nós</a>
+                <a href="#">Contato</a>
+                <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com"><i class="fab fa-tiktok"></i></a>
+            </div>
+            <div class="footer-contact">
+                
+                <p>Telefone: (+351) 968 270 972</p>
+                
+                <p>&copy; Copyright 2025 | Johny Drywall Barramentos | Todos os direitos reservados.</p>
+            </div>
+        </div>
+        
+    </footer>
+    <!-- Botão Voltar ao Topo -->
+    <div class="back-to-top" onclick="scrollToTop()">
+        &#8593;
+    </div>
+
+    <script>
+        // Função para voltar ao topo
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

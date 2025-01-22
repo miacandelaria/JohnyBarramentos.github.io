@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria - Johny Drywall Barramentos</title>
+    <style>
+        /* Reset básico: remove margens e preenchimentos padrão para todos os elementos */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Estilo geral do corpo */
+        body {
+            font-family: 'Arial', sans-serif; /* Fonte padrão */
+            background: #f5f5f5; /* Cor de fundo clara */
+            color: #333; /* Cor do texto */
+            display: flex; /* Exibição flexível */
+            flex-direction: column; /* Direção da flexbox: coluna */
+            min-height: 100vh; /* Altura mínima de toda a tela */
+        }
+
+        /* Cabeçalho da página */
+        header {
+            background: #1B5E20; /* Cor de fundo verde escura */
+            padding: 15px; /* Espaçamento interno */
+            text-align: center; /* Texto centralizado */
+            color: white; /* Cor do texto */
+            font-size: 24px; /* Tamanho da fonte */
+            font-weight: bold; /* Negrito */
+        }
+
+        /* Estilo principal da página */
+        main {
+            flex: 1; /* Faz o main ocupar o espaço restante */
+            padding: 40px 20px; /* Espaçamento interno */
+        }
+
+        /* Título da galeria */
+        .gallery-title {
+            text-align: center; /* Centraliza o texto */
+            font-size: 36px; /* Tamanho da fonte */
+            color: #1B5E20; /* Cor verde escura */
+            margin-bottom: 20px; /* Espaçamento abaixo do título */
+        }
+
+        /* Container da galeria */
+        .gallery-container {
+            display: grid; /* Exibe os itens como uma grade */
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Colunas flexíveis com largura mínima de 250px */
+            gap: 20px; /* Espaçamento entre os itens */
+            max-width: 1200px; /* Largura máxima da galeria */
+            margin: 0 auto; /* Centraliza horizontalmente */
+        }
+
+        /* Estilo dos itens da galeria */
+        .gallery-item {
+            position: relative; /* Posicionamento relativo para efeitos futuros */
+            overflow: hidden; /* Oculta conteúdo que ultrapassa os limites */
+            border-radius: 10px; /* Bordas arredondadas */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra leve */
+        }
+
+        /* Estilo das imagens da galeria */
+        .gallery-item img {
+            width: 100%; /* Imagem ocupa toda a largura do container */
+            height: auto; /* Mantém a proporção da imagem */
+            display: block; /* Remove espaços extras em torno da imagem */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animação suave ao passar o mouse */
+        }
+
+        /* Efeito ao passar o mouse sobre as imagens */
+        .gallery-item img:hover {
+            transform: scale(1.1); /* Aumenta levemente a imagem */
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Aumenta a sombra */
+        }
+
+        .gallery-item video {
+            width: 100%; /* Faz o vídeo ocupar toda a largura do container */
+            height: auto; /* Mantém a proporção do vídeo */
+            border-radius: 20px; /* Bordas arredondadas */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra leve */
+        }
+
+        /* Rodapé da página */
+        footer {
+            background: #1B5E20; /* Cor de fundo verde escura */
+            color: white; /* Cor do texto */
+            text-align: center; /* Texto centralizado */
+            padding: 15px; /* Espaçamento interno */
+            font-size: 14px; /* Tamanho da fonte menor */
+        }
+
+        /* Links no rodapé */
+        footer a {
+            color: #76FF03; /* Cor verde neon */
+            text-decoration: none; /* Remove o sublinhado */
+        }
+
+        /* Efeito ao passar o mouse nos links do rodapé */
+        footer a:hover {
+            text-decoration: underline; /* Adiciona sublinhado */
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        Galeria - Johny Drywall Barramentos
+    </header>
+    <main>
+        <!-- Título da galeria -->
+        <h1 class="gallery-title">Nossos Projetos</h1>
+        <!-- Container da galeria -->
+        <div class="gallery-container">
+            <!-- Substitua os links abaixo pelas suas imagens reais -->
+            <div class="gallery-item"><img src="1 png.png" alt="Projeto 1"></div>
+            <div class="gallery-item"><img src="2 png.png" alt="Projeto 2"></div>
+            <div class="gallery-item"><img src="3 png.png" alt="Projeto 3"></div>
+            <div class="gallery-item"><img src="4 png.png" alt="Projeto 4"></div>
+            <div class="gallery-item"><img src="5 png.png" alt="Projeto 5"></div>
+            <div class="gallery-item"><img src="6 png.jpg" alt="Projeto 6"></div>
+            <div class="gallery-item"><img src="imagem7.jpg" alt="Projeto 7"></div>
+            <div class="gallery-item"><img src="imagem8.jpg" alt="Projeto 8"></div>
+            <div class="gallery-item video">
+            <video controls>
+                <source src="vid1.mp4" type="video/mp4"> 
+                Seu navegador não suporta o elemento de vídeo.
+           </video></div>
+
+           <div class="gallery-item video">
+           <video controls>
+                <source src="vid2.mp4" type="video/mp4"> 
+                Seu navegador não suporta o elemento de vídeo.
+           </video></div>
+
+   
+           
+        
+        </div>
+    </main>
+    <!-- footer -->
+    <footer>
+        &copy;Copyright 2025 | Johny Drywall Barramentos | Desenvolvido por <a href="#">@_website</a>
+    </footer>
+</body>
+</html>

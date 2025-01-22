@@ -48,26 +48,31 @@
 
         /* Container da galeria */
         .gallery-container {
-            display: grid; /* Exibe os itens como uma grade */
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Colunas flexíveis com largura mínima de 250px */
-            gap: 20px; /* Espaçamento entre os itens */
-            max-width: 1200px; /* Largura máxima da galeria */
-            margin: 0 auto; /* Centraliza horizontalmente */
+            column-count: 3; /* Número de colunas */
+            column-gap: 20px; /* Espaçamento entre as colunas */
         }
 
         /* Estilo dos itens da galeria */
         .gallery-item {
-            position: relative; /* Posicionamento relativo para efeitos futuros */
-            overflow: hidden; /* Oculta conteúdo que ultrapassa os limites */
-            border-radius: 10px; /* Bordas arredondadas */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra leve */
+            margin-bottom: 20px; /* Espaçamento abaixo */
+            break-inside: avoid; /* Evita quebra de itens entre colunas */
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            display: inline-block; /* Isso resolve problemas com alinhamento */
+            width: 100%; /* Ajusta dinamicamente ao container */
         }
+        
 
         /* Estilo das imagens da galeria */
-        .gallery-item img {
-            width: 100%; /* Imagem ocupa toda a largura do container */
-            height: auto; /* Mantém a proporção da imagem */
-            display: block; /* Remove espaços extras em torno da imagem */
+        .gallery-item img{
+            width: 100%; /* Faz a imagem e o vídeo ocuparem toda a largura do container */
+            height: auto; /* Mantém a proporção da imagem e do vídeo */
+            border-radius: 10px; /* Bordas arredondadas */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra leve */
+            object-fit: cover; /* Faz a imagem e o vídeo preencherem o container */
+            display: block; /* Remove espaços extras em torno da imagem e do vídeo */
             transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animação suave ao passar o mouse */
         }
 
@@ -77,11 +82,73 @@
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Aumenta a sombra */
         }
 
+        /* Estilo dos vídeos da galeria */
         .gallery-item video {
-            width: 100%; /* Faz o vídeo ocupar toda a largura do container */
-            height: auto; /* Mantém a proporção do vídeo */
-            border-radius: 20px; /* Bordas arredondadas */
+            width: 30%; /* Faz os vídeos ocuparem toda a largura do container */
+            height: auto; /* Mantém a proporção dos vídeos */
+            border-radius: 10px; /* Bordas arredondadas */
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra leve */
+            object-fit: cover; /* Cobre o container mantendo proporções */
+            
+            display: inline-block; /* Remove espaçamento extra causado por comportamento inline */
+        }
+
+            
+    
+        
+
+        /* Modal */
+        .modal {
+            display: none; /* Oculta o modal por padrão */
+            position: fixed; /* Fixa o modal na tela */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8); /* Fundo escuro semitransparente */
+            justify-content: center;
+            align-items: center;
+            z-index: 1000; /* Coloca o modal acima de outros elementos */
+        }
+
+        .modal-content {
+            background: white; /* Fundo branco */
+            padding: 20px; /* Espaçamento interno */
+            border-radius: 10px; /* Bordas arredondadas */
+            max-width: 90%; /* Largura máxima do modal */
+            max-height: 90%; /* Altura máxima do modal */
+            text-align: center; /* Centraliza o conteúdo */
+            overflow-y: auto; /* Habilita rolagem vertical se necessário */
+        }
+
+        .modal-content img {
+            max-width: 100%; /* Largura máxima da imagem */
+            max-height: 60vh; /* Altura máxima da imagem limitada a 60% da altura da viewport */
+            border-radius: 10px;
+            margin-bottom: 10px; /* Espaçamento entre a imagem e a descrição */
+        }
+
+        .modal-description {
+            margin-top: 10px;
+            font-size: 18px;
+            color: #333;
+            word-wrap: break-word; /* Quebra linhas longas */
+        }
+
+
+        .modal-close {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: #1B5E20;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .modal-close:hover {
+            background: #76FF03;
         }
 
         /* Rodapé da página */
@@ -116,34 +183,72 @@
         <!-- Container da galeria -->
         <div class="gallery-container">
             <!-- Substitua os links abaixo pelas suas imagens reais -->
-            <div class="gallery-item"><img src="1 png.png" alt="Projeto 1"></div>
-            <div class="gallery-item"><img src="2 png.png" alt="Projeto 2"></div>
-            <div class="gallery-item"><img src="3 png.png" alt="Projeto 3"></div>
-            <div class="gallery-item"><img src="4 png.png" alt="Projeto 4"></div>
-            <div class="gallery-item"><img src="5 png.png" alt="Projeto 5"></div>
-            <div class="gallery-item"><img src="6 png.jpg" alt="Projeto 6"></div>
-            <div class="gallery-item"><img src="imagem7.jpg" alt="Projeto 7"></div>
-            <div class="gallery-item"><img src="imagem8.jpg" alt="Projeto 8"></div>
-            <div class="gallery-item video">
-            <video controls>
-                <source src="vid1.mp4" type="video/mp4"> 
-                Seu navegador não suporta o elemento de vídeo.
-           </video></div>
-
-           <div class="gallery-item video">
-           <video controls>
-                <source src="vid2.mp4" type="video/mp4"> 
-                Seu navegador não suporta o elemento de vídeo.
-           </video></div>
-
-   
-           
-        
+            <div class="gallery-item" data-description="Pladur e acabamento refinado."><img src="1 png.png" alt="Projeto 1"></div>
+            <div class="gallery-item" data-description="Pintura de alta qualidade."><img src="2 png.png" alt="Projeto 2"></div>
+            <div class="gallery-item" data-description="Barramentos modernos e resistentes."><img src="3 png.png" alt="Projeto 3"></div>
+            <div class="gallery-item" data-description="Detalhamento em gesso."><img src="4 png.png" alt="Projeto 4"></div>
+            <div class="gallery-item" data-description="Design inovador de interiores."><img src="5 png.png" alt="Projeto 5"></div>
+            <div class="gallery-item" data-description="Montagem de drywall eficiente."><img src="6 png.jpg" alt="Projeto 6"></div>
+            <div class="gallery-item" data-description="Projeto completo de gesso e iluminação."><img src="imagem7.jpg" alt="Projeto 7"></div>
+            <div class="gallery-item" data-description="Renovação de ambientes residenciais."><img src="imagem8.jpg" alt="Projeto 8"></div>
         </div>
+
+        <div class="gallery-item video">
+            <video controls>
+                <source src="vid1.mp4" type="video/mp4">
+                Seu navegador não suporta vídeos HTML5.
+            </video>
+        </div>
+        
+        <div class="gallery-item video">
+            <video controls>
+                <source src="vid2.mp4" type="video/mp4">
+                Seu navegador não suporta vídeos HTML5.
+            </video>
+        </div>
+        
     </main>
-    <!-- footer -->
+
+    <!-- Modal -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <img id="modal-image" src="" alt="Imagem do projeto">
+            <p class="modal-description" id="modal-description"></p>
+            <button class="modal-close" id="modal-close">Fechar</button>
+        </div>
+    </div>
+
+    <!-- Rodapé -->
     <footer>
         &copy;Copyright 2025 | Johny Drywall Barramentos | Desenvolvido por <a href="#">@_website</a>
     </footer>
+
+    <script>
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const modal = document.getElementById('modal');
+        const modalImage = document.getElementById('modal-image');
+        const modalDescription = document.getElementById('modal-description');
+        const modalClose = document.getElementById('modal-close');
+
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const img = item.querySelector('img');
+                modalImage.src = img.src;
+                modalDescription.textContent = item.getAttribute('data-description');
+                modal.style.display = 'flex';
+            });
+        });
+
+        modalClose.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html>
+

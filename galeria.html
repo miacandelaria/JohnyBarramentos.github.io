@@ -47,6 +47,7 @@
         }
 
         /* Container da galeria */
+        
         .gallery-container {
             column-count: 3; /* Número de colunas */
             column-gap: 20px; /* Espaçamento entre as colunas */
@@ -58,34 +59,36 @@
             break-inside: avoid; /* Evita quebra de itens entre colunas */
             border-radius: 10px;
             overflow: hidden;
-            
             cursor: pointer;
             display: inline-block; /* Isso resolve problemas com alinhamento */
            
         }
+
+    
         
 
         /* Estilo das imagens da galeria */
-        
+        .gallery-item video,
         .gallery-item img{
             width: 100%; /* Faz a imagem e o vídeo ocuparem toda a largura do container */
             height: auto; /* Mantém a proporção da imagem e do vídeo */
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra leve */
             object-fit: cover; /* Faz a imagem e o vídeo preencherem o container */
-            display: inline-block; /* Remove espaços extras em torno da imagem e do vídeo */
+            display: block; /* Remove espaços extras em torno da imagem e do vídeo */
             transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animação suave ao passar o mouse */
         }
 
-        .gallery-item video{
-            width: 100%; /* Faz a imagem e o vídeo ocuparem toda a largura do container */
-            height: auto; /* Mantém a proporção da imagem e do vídeo */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra leve */
-            object-fit: cover; /* Faz a imagem e o vídeo preencherem o container */
-            display: inline-block; /* Remove espaços extras em torno da imagem e do vídeo */
-            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animação suave ao passar o mouse */
-            margin-left: 20px;
-        }
 
+        .gallery-item video {
+            width: 100%; /* Faz os vídeos ocuparem a mesma largura das imagens */
+            height: auto; /* Mantém a proporção correta */
+            object-fit: cover; /* Garante que o vídeo se ajuste bem */
+            display: inline-block; /* Evita espaços extras ao redor */
+            border-radius: 10px; /* Bordas arredondadas iguais às imagens */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
         /* Efeito ao passar o mouse sobre as imagens */
         .gallery-item img:hover {
             transform: scale(1.1); /* Aumenta levemente a imagem */
@@ -193,38 +196,42 @@
             <div class="gallery-item" data-description="Renovação de ambientes residenciais."><img src="11 png.png" alt="Projeto 8"></div>
             <div class="gallery-item" data-description="Renovação de ambientes residenciais."><img src="12 png.png" alt="Projeto 8"></div>
             <div class="gallery-item" data-description="Renovação de ambientes residenciais."><img src="13 png.png" alt="Projeto 8"></div>
-        </div>
-
-        <div class="gallery-item video">
-            <video controls>
-                <source src="vid1.mp4" type="video/mp4">
-                Seu navegador não suporta vídeos HTML5.
-            </video>
-        </div>
         
-        <div class="gallery-item video">
-            <video controls>
-                <source src="vid2.mp4" type="video/mp4">
-                Seu navegador não suporta vídeos HTML5.
-            </video>
-        </div>
-
-
-        <div class="gallery-item video">
-            <video controls>
-                <source src="vid3.mp4" type="video/mp4">
-                Seu navegador não suporta vídeos HTML5.
-            </video>
-        </div>
-
-        <div class="gallery-item video">
-            <video controls>
-                <source src="vid4.mp4" type="video/mp4">
-                Seu navegador não suporta vídeos HTML5.
-            </video>
-        </div>
-
+            <div class="gallery-item">
+                <video controls>
+                    <source src="vid4.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeos HTML5.
+                </video>
+            </div>
         
+            <div class="gallery-item">
+                <video controls>
+                    <source src="vid2.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeos HTML5.
+                </video>
+            </div>
+        
+            <div class="gallery-item">
+                <video controls>
+                    <source src="vid3.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeos HTML5.
+                </video>
+            </div>
+        
+            <div class="gallery-item">
+                <video controls>
+                    <source src="vid1.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeos HTML5.
+                </video>
+            </div>
+
+           
+        
+        </div>
+
+       
+
+
         
     </main>
 
@@ -270,4 +277,3 @@
     </script>
 </body>
 </html>
-

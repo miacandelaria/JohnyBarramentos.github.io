@@ -3,6 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Ícones sociais -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <!-- Fonte personalizada: Rubik Dirt -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Dirt&display=swap" rel="stylesheet">
+
     <title>Galeria - Johny Drywall Barramentos</title>
     <style>
         /* Reset básico: remove margens e preenchimentos padrão para todos os elementos */
@@ -14,22 +23,75 @@
 
         /* Estilo geral do corpo */
         body {
-            font-family: 'Arial', sans-serif; /* Fonte padrão */
-            background: #f5f5f5; /* Cor de fundo clara */
-            color: #333; /* Cor do texto */
-            display: flex; /* Exibição flexível */
-            flex-direction: column; /* Direção da flexbox: coluna */
-            min-height: 60vh; /* Altura mínima de toda a tela */
+            font-family: 'Arial', sans-serif;
+            background: #121212; /* Fundo escuro moderno */
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         /* Cabeçalho da página */
         header {
-            background: #1B5E20; /* Cor de fundo verde escura */
-            padding: 15px; /* Espaçamento interno */
-            text-align: center; /* Texto centralizado */
-            color: white; /* Cor do texto */
-            font-size: 24px; /* Tamanho da fonte */
-            font-weight: bold; /* Negrito */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background: rgba(0, 0, 0, 0.8); /* Transparência */
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: #bfc2bd;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+        }
+
+        nav a::after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #76FF03;
+            left: 0;
+            bottom: -5px;
+            transition: width 0.3s ease-in-out;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+         /* Ícones sociais */
+         .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 20px;
+            transition: transform 0.3s, color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #76FF03;
+            transform: scale(1.2);
         }
 
         /* Estilo principal da página */
@@ -39,11 +101,18 @@
         }
 
         /* Título da galeria */
-        .gallery-title {
-            text-align: center; /* Centraliza o texto */
-            font-size: 36px; /* Tamanho da fonte */
-            color: #1B5E20; /* Cor verde escura */
-            margin-bottom: 20px; /* Espaçamento abaixo do título */
+        .main-title {
+            font-family: "Rubik Dirt", serif;
+            font-weight: 400;
+            font-style: normal;
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 40px;
+            color: #ffffff;
+            text-shadow: 2px 2px 15px rgba(118, 255, 3, 0.8);
+            animation: fadeIn 1.5s ease-in-out;
+            font-size: 60px;
+        
         }
 
         /* Container da galeria */
@@ -55,6 +124,7 @@
 
         /* Estilo dos itens da galeria */
         .gallery-item {
+             
             margin-bottom: 20px; /* Espaçamento abaixo */
             break-inside: avoid; /* Evita quebra de itens entre colunas */
             border-radius: 10px;
@@ -63,9 +133,6 @@
             display: inline-block; /* Isso resolve problemas com alinhamento */
            
         }
-
-    
-        
 
         /* Estilo das imagens da galeria */
         .gallery-item video,
@@ -94,8 +161,6 @@
             transform: scale(1.1); /* Aumenta levemente a imagem */
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Aumenta a sombra */
         }
-
-       
 
         /* Modal */
         .modal {
@@ -151,35 +216,166 @@
             background: #76FF03;
         }
 
-        /* Rodapé da página */
+        /* Rodapé */
         footer {
-            background: #1B5E20; /* Cor de fundo verde escura */
-            color: white; /* Cor do texto */
-            text-align: center; /* Texto centralizado */
-            padding: 15px; /* Espaçamento interno */
-            font-size: 14px; /* Tamanho da fonte menor */
+            
+            background: #000000;
+            color: #E8F5E9;
+            padding: 10px 0;
+            text-align: left;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.2);
+        }
+        
+
+        .footer-container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
         }
 
-        /* Links no rodapé */
-        footer a {
-            color: #76FF03; /* Cor verde neon */
-            text-decoration: none; /* Remove o sublinhado */
+        .footer-top {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin-bottom: 10px;
         }
 
-        /* Efeito ao passar o mouse nos links do rodapé */
-        footer a:hover {
-            text-decoration: underline; /* Adiciona sublinhado */
+        .footer-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
+
+        .footer-logo {
+            margin-right: 20px;
+        }
+
+        .footer-nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 30px;
+            /*justify-content: right;
+            align-items: right;
+            width: 100%;*/
+        }
+
+        .footer-nav a, .footer-social a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 20px;
+            transition: color 0.3s ease-in-out;
+            gap: 30px;
+        }
+
+        .footer-nav a:hover, .footer-social a:hover {
+            color: #2efa26;
+        }
+
+        .footer-info {
+            text-align: right;
+        }
+
+        .footer-info p {
+            margin: 5px 0;
+            font-size: 17px;
+        }
+
+        .footer-contact {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* Alinha os itens ao início do eixo transversal (esquerda) */
+            color: #C8E6C9;
+            margin-left: 0; /* Remove a margem esquerda */
+            padding: 25px;
+        }
+
+        .footer-contact p {
+        
+            font-size: 15px;
+        
+            padding-top: 10px;
+        }
+
+
+         /* Botão Voltar ao Topo */
+         .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #76FF03;
+            color: #121212;
+            font-size: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .back-to-top:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+                /* Animação fade-in com zoom */
+        @keyframes fadeInZoom {
+            0% {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Aplicação inicial para os itens da galeria */
+        .gallery-item {
+            opacity: 0;
+            transform: scale(0.9);
+            animation: fadeInZoom 0.6s ease-out forwards;
+        }
+
+        /* Adiciona atraso para cada item */
+        .gallery-item:nth-child(1) { animation-delay: 0.1s; }
+        .gallery-item:nth-child(2) { animation-delay: 0.2s; }
+        .gallery-item:nth-child(3) { animation-delay: 0.3s; }
+        .gallery-item:nth-child(4) { animation-delay: 0.4s; }
+        .gallery-item:nth-child(5) { animation-delay: 0.5s; }
+        .gallery-item:nth-child(6) { animation-delay: 0.6s; }
+
     </style>
 </head>
 <body>
     <!-- Cabeçalho -->
     <header>
-        Galeria - Johny Drywall Barramentos
+        <nav>
+            <a href="teste.html">Home</a>
+            <a href="galeria.html">Galeria</a>
+        </nav>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/johnydrywallbarramentos"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@johnybarramentos?_t=8s84f4rD3tH&_r=1"><i class="fab fa-tiktok"></i></a>
+        </div>
     </header>
     <main>
         <!-- Título da galeria -->
-        <h1 class="gallery-title">Nossos Projetos</h1>
+        <h1 class="main-title">Nossos Projetos</h1>
         <!-- Container da galeria -->
         <div class="gallery-container">
             <!-- Substitua os links abaixo pelas suas imagens reais -->
@@ -224,15 +420,8 @@
                     Seu navegador não suporta vídeos HTML5.
                 </video>
             </div>
-
-           
-        
+     
         </div>
-
-       
-
-
-        
     </main>
 
     <!-- Modal -->
@@ -246,10 +435,31 @@
 
     <!-- Rodapé -->
     <footer>
-        &copy;Copyright 2025 | Johny Drywall Barramentos | Desenvolvido por <a href="#">@_website</a>
+        <div class="footer-container">
+            <div class="footer-top">
+                <nav class="footer-nav">
+                    <a href="teste.html">Home</a>
+                    <a href="galeria.html">Galeria</a>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/johnydrywallbarramentos"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@johnybarramentos?_t=8s84f4rD3tH&_r=1"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </nav>
+            </div>
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="logo_johny3.jpg" alt="Johny Drywall Barramentos" style="width: 150px; display: block;">
+                </div>
+                <div class="footer-info">
+                    <p>Telefone: (+351) 968 270 972</p>
+                    <p>&copy; 2025 Johny Drywall Barramentos. Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </div>
     </footer>
 
     <script>
+        
         const galleryItems = document.querySelectorAll('.gallery-item');
         const modal = document.getElementById('modal');
         const modalImage = document.getElementById('modal-image');
@@ -272,6 +482,31 @@
         modal.addEventListener('click', (e) => {
             if (e.target === modal) {
                 modal.style.display = 'none';
+            }
+        });       
+    </script>
+
+    <!-- Botão Voltar ao Topo -->
+    <div class="back-to-top" onclick="scrollToTop()">
+        &#8593;
+    </div>
+
+    <script>
+          // Função para voltar ao topo
+          function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Mostrar/ocultar botão ao rolar a página
+        const backToTopButton = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.style.display = 'flex';
+            } else {
+                backToTopButton.style.display = 'none';
             }
         });
     </script>

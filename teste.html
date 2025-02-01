@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Johny Drywall Barramentos</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Dirt&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Rubik+Dirt&display=swap" rel="stylesheet">
     <!-- Link para fontes de ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -33,12 +41,13 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 40px;
-            background: rgba(0, 0, 0, 0.8); /* Transparência */
+            padding: 15px 23px;
+            background: rgba(0, 0, 0, 0.85);
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
         }
 
         nav {
@@ -47,7 +56,7 @@
         }
 
         nav a {
-            color: #76FF03;
+            color: #ffffff;
             text-decoration: none;
             font-size: 18px;
             font-weight: bold;
@@ -56,7 +65,8 @@
         }
 
         nav a:hover {
-            color: #ffffff;
+            color: #3df718;
+            transform: scale(1.1);
         }
 
         nav a::after {
@@ -64,7 +74,7 @@
             position: absolute;
             width: 0;
             height: 2px;
-            background: #76FF03;
+            background: #ffffff;
             left: 0;
             bottom: -5px;
             transition: width 0.3s ease-in-out;
@@ -78,6 +88,7 @@
         .social-icons {
             display: flex;
             gap: 15px;
+            text-align: end;
         }
 
         .social-icons a {
@@ -87,7 +98,7 @@
         }
 
         .social-icons a:hover {
-            color: #76FF03;
+            color: #3df718;
             transform: scale(1.2);
         }
 
@@ -99,34 +110,48 @@
         }
 
         .container2 {
-            margin: 0 auto;
+            margin: 40px auto;
             max-width: 900px;
             background: linear-gradient(145deg, #263238, #37474F);
             padding: 40px;
             border-radius: 15px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
             color: #A5D6A7;
+            text-align: center;
+            animation: slideUp 1s ease-in-out;
         }
 
         .main-title {
+            font-family: "Rubik Dirt", serif;
+            font-weight: 400;
+            font-style: normal;
+            text-align: center;
+            margin-top: 23px;
+            color: #ffffff;
+            text-shadow: 2px 2px 15px rgba(118, 255, 3, 0.8);
+            animation: fadeIn 1.5s ease-in-out;
             font-size: 60px;
-            font-weight: bold;
-            margin-bottom: 50px;
-            color: #76FF03;
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
         }
 
+       
         h2 {
             font-size: 28px;
             margin-bottom: 15px;
             color: #E8F5E9;
+            font-family: "Bree Serif", serif;
+            font-weight: 400;
+            font-style: normal;
         }
+
+  
 
         p {
             font-size: 18px;
             line-height: 1.8;
             margin-bottom: 20px;
             color: #C8E6C9;
+            font-weight: 400;
+            font-style: normal;
         }
 
         /* Galeria de Imagens */
@@ -146,7 +171,7 @@
             height: auto;
             object-fit: cover;
             border-radius: 10px;
-            border: 2px solid #76FF03;
+            border: 2px solid #ffffff;
             transition: transform 0.4s, box-shadow 0.4s;
         }
 
@@ -156,82 +181,93 @@
             z-index: 10; /* Garante que a imagem em hover fica em cima das outras */
         }
 
-        /* Rodapé */
-        footer {
-            background: black;
-            color: #E8F5E9;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 30px 10px;
-            font-size: 10px;
-            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.2);
-        }
+         /* Rodapé */
+       footer {
+        
+        background: #000000;
+        color: #E8F5E9;
+        padding: 10px 0;
+        text-align: left;
+        box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.2);
+    }
+    
 
-        .footer-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            width: 100%;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
+    .footer-container {
+        max-width: 1200px;
+        margin: auto;
+        padding: 0 20px;
+        display: flex;
+        flex-direction: column;
+    }
 
-        .footer-logo {
-            font-size: 18px;
-            font-weight: bold;
-            color: #76FF03;
-        }
+    .footer-top {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin-bottom: 10px;
+    }
 
-        .footer-nav {
-            display: flex;
-            gap: 40px;
-            text-align: center;
-            margin: 20px;
-        }
+    .footer-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 
-        .footer-nav a {
-            color: #C8E6C9;
-            text-decoration: none;
-            font-size: 18px;
-            text-align: center;
-        }
+    .footer-logo {
+        margin-right: 20px;
+    }
 
-        .footer-nav a:hover {
-            color: #76FF03;
-        }
+    .footer-nav {
+        display: flex;
+        gap: 30px;
+    }
 
-        .footer-contact {
-            display: flex;
-            flex-direction: column;
-           /* align-items: flex-start;*/
-            color: #C8E6C9;
-            text-align: left;
-        }
+    .footer-nav a, .footer-social a {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 20px;
+        transition: color 0.3s ease-in-out;
+        gap: 30px;
+    }
 
-        .footer-contact p {
-            margin: 5px 0;
-            text-align: left;
-            font-size: 15px;
-        }
+    .footer-nav a:hover, .footer-social a:hover {
+        color: #2efa26;
+    }
 
-        .footer-social {
-            display: flex;
-            gap: 25px;
-        }
+    .footer-info {
+        text-align: right;
+    }
 
-        .footer-social a {
-            color: #C8E6C9;
-            font-size: 20px;
-            transition: transform 0.3s, color 0.3s;
-        }
+    .footer-info p {
+        margin: 5px 0;
+        font-size: 17px;
+    }
 
-        .footer-social a:hover {
-            color: #76FF03;
-            transform: scale(1.2);
-        }
+    .footer-contact {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* Alinha os itens ao início do eixo transversal (esquerda) */
+        color: #C8E6C9;
+        margin-left: 0; /* Remove a margem esquerda */
+        padding: 25px;
+    }
+
+    .footer-contact p {
+       
+        font-size: 15px;
+       
+        padding-top: 10px;
+    }
+
+    .footer-social {
+        display: flex;
+        gap: 30px;
+        justify-content: right;
+        align-items: right;
+        width: 100%;
+    }
+
+
 
         /* Botão Voltar ao Topo */
         .back-to-top {
@@ -256,13 +292,113 @@
             transform: scale(1.1);
             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
         }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+                /* Animação fade-in com zoom */
+        @keyframes fadeInZoom {
+            0% {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Aplicação inicial para os itens da galeria */
+        .gallery-item {
+            opacity: 0;
+            transform: scale(0.9);
+            animation: fadeInZoom 0.6s ease-out forwards;
+        }
+
+        /* Adiciona atraso para cada item */
+        .gallery-item:nth-child(1) { animation-delay: 0.1s; }
+        .gallery-item:nth-child(2) { animation-delay: 0.2s; }
+        .gallery-item:nth-child(3) { animation-delay: 0.3s; }
+        .gallery-item:nth-child(4) { animation-delay: 0.4s; }
+        .gallery-item:nth-child(5) { animation-delay: 0.5s; }
+        .gallery-item:nth-child(6) { animation-delay: 0.6s; }
+
+        /* Animação suave para cabeçalho ao rolar */
+        header.scrolled {
+            background: rgba(0, 0, 0, 0.95);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+        }
+
+        /* Fade-in para texto principal */
+        .main-title {
+            animation: fadeInZoom 1.5s ease-out forwards;
+        }
+
+        /* Transição suave para imagens da galeria */
+        .cointained2 img {
+            opacity: 0;
+            transform: scale(0.8);
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        .cointained2 img:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+        .cointained2 img:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+        .cointained2 img:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+        .cointained2 img:nth-child(4) {
+            animation-delay: 0.8s;
+        }
+        .cointained2 img:nth-child(5) {
+            animation-delay: 1s;
+        }
+
+        /* Fade-in para seção de trabalhos */
+        .container2 {
+            animation: slideUp 1.5s ease-out forwards;
+        }
+
+        /* Botão voltar ao topo - animação inicial */
+        .back-to-top {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.3s, transform 0.3s;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Keyframes adicionais */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
     </style>
 </head>
 <body>
     <header>
         <nav>
             <a href="teste.html">Home</a>
-            <a href="servicos.html">Serviços</a>
             <a href="galeria.html">Galeria</a>
         </nav>
         <div class="social-icons">
@@ -287,37 +423,73 @@
     </main>
     <footer>
         <div class="footer-container">
-            <div class="footer-logo">
-                
-                <img src="logo_johny3.jpg" alt="Johny Drywall Barramentos" style="width: 200px; display: block; margin: 0 auto 0 0;">
+            <div class="footer-top">
+                <nav class="footer-nav">
+                    <a href="teste.html">Home</a>
+                    <a href="galeria.html">Galeria</a>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/johnydrywallbarramentos"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@johnybarramentos?_t=8s84f4rD3tH&_r=1"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </nav>
             </div>
-            <div class="footer-nav">
-                <a href="#">Home</a>
-                <a href="#">Serviços</a>
-                <a href="#">Sobre Nós</a>
-                <a href="#">Contato</a>
-                <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.tiktok.com"><i class="fab fa-tiktok"></i></a>
-            </div>
-            <div class="footer-contact">
-                
-                <p>Telefone: (+351) 968 270 972</p>
-                
-                <p>&copy; Copyright 2025 | Johny Drywall Barramentos | Todos os direitos reservados.</p>
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="logo_johny3.jpg" alt="Johny Drywall Barramentos" style="width: 150px; display: block;">
+                </div>
+                <div class="footer-info">
+                    <p>Telefone: (+351) 968 270 972</p>
+                    <p>&copy; 2025 Johny Drywall Barramentos. Todos os direitos reservados.</p>
+                </div>
             </div>
         </div>
-        
     </footer>
+     
     <!-- Botão Voltar ao Topo -->
     <div class="back-to-top" onclick="scrollToTop()">
         &#8593;
     </div>
 
     <script>
-        // Função para voltar ao topo
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+        // Selecionar o botão "Voltar ao Topo"
+        const backToTopButton = document.querySelector(".back-to-top");
+
+        // Adicionar evento de rolagem para monitorar a posição do scroll
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 300) { // Exibe o botão após rolar 300px
+                backToTopButton.classList.add("show");
+            } else {
+                backToTopButton.classList.remove("show");
+            }
+        });
+
+
+    
+        // Função para ativar animação no cabeçalho
+        const header = document.querySelector("header");
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 50) {
+                header.classList.add("scrolled");
+            } else {
+                header.classList.remove("scrolled");
+            }
+        });
+
+       
+        // Ativar animações nos elementos ao rolar
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = "running";
+                }
+            });
+        });
+
+        // Aplicar observer nos elementos animados
+        document.querySelectorAll(".container2, .cointained2 img").forEach((element) => {
+            element.style.animationPlayState = "paused";
+            observer.observe(element);
+        });
     </script>
 </body>
 </html>
